@@ -7,10 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Farmacia UI';
-  isIn : boolean = false;
-
-  toggleState() {
-    let oldValue = this.isIn;
-    this.isIn = oldValue === false ? true : false;
-  }
 }
