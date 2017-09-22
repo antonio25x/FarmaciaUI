@@ -13,12 +13,14 @@ cache:
     - node_modules
 
 before_script:
-- cd ui
 - npm install -g angular-cli
 - npm install -g angular-cli-ghpages
 - npm install
 
-script: ng build --aot --prod --progress false --base-href "https://antonio25x.github.io/FarmaciaUI/"
+script: 
+- cd ui
+- dir
+- ng build --aot --prod --progress false --base-href "https://antonio25x.github.io/FarmaciaUI/"
 
 deploy:
   provider: pages
