@@ -20,7 +20,9 @@ before_install:
 before_script:
 - npm install -g angular-cli
 - npm install -g karma
+- npm install -g angular-cli-ghpages
 - npm install
-- ng build
+- ng build --prod --base-href "https://antonio25x.github.io/FarmaciaUI/"
+- ngh
 
 script: karma start config/karma.conf.js --single-run
