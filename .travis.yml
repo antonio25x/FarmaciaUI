@@ -2,30 +2,26 @@ sudo: required
 dist: trusty
 language: node_js
 node_js:
-  - '6'
+  - '8'
 
 branches:
   only:
     - master
- 
-cache:
-  directories:
-    - node_modules
 
 before_script:
-- npm install -g angular-cli
-- npm install -g angular-cli-ghpages
+- npm install -g @angular/cli
 - npm install
 
 script: 
+- dir
 - cd ui
 - dir
-- ng build --aot --prod --progress false --base-href "https://antonio25x.github.io/FarmaciaUI/"
+- ng -v
+- ng build --prod --base-href "https://antonio25x.github.io/FarmaciaUI/"
 
 deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
   local_dir: dist
-  on:
-    branch: master
+  target_branch: ghpages
