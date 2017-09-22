@@ -17,8 +17,6 @@ before_script:
 
 script: 
 - dir
-- cd ui
-- dir
 - ng -v
 - ng build --prod --base-href "https://antonio25x.github.io/FarmaciaUI/"
 
@@ -28,3 +26,10 @@ deploy:
   github_token: $GITHUB_TOKEN
   local_dir: dist
   target_branch: ghpages
+
+notifications:
+  email:
+    recipients:
+      - programador.inca@gmail.com
+    on_success: never
+    on_failure: always
