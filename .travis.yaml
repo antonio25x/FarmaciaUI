@@ -2,7 +2,7 @@ sudo: required
 dist: trusty
 language: node_js
 node_js:
-  - '4.2'
+  - '8.4.0'
 
 addons:
 apt:
@@ -22,7 +22,15 @@ before_script:
 - npm install -g karma
 - npm install -g angular-cli-ghpages
 - npm install
-- ng build --prod --base-href "https://antonio25x.github.io/FarmaciaUI/"
-- ngh
 
-script: karma start config/karma.conf.js --single-run
+script: ng build --prod --base-href "https://antonio25x.github.io/FarmaciaUI/"
+
+after_script: ngh 
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: dist
+  on:
+    branch: master
