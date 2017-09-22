@@ -25,11 +25,11 @@ deploy:
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
   local_dir: dist
-  target_branch: ghpages
+  target_branch: gh-pages
 
 notifications:
   email:
     recipients:
       - programador.inca@gmail.com
-    on_success: never
+    on_success: always
     on_failure: always
