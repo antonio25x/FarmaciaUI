@@ -1,0 +1,21 @@
+
+.menu-item {
+    background-color: lightgray;
+    margin: 1em;
+    padding: 1em;
+    cursor: pointer;
+}
+
+.menu-item:hover {
+    background-color: gray;
+}
+
+.menu-item .card-header {
+    border-bottom: 1px solid black;
+}
+
+.menu-item .card-footer {
+    border-top: 1px solid black;
+    font-style: italic;
+    font-size: .9em;
+}

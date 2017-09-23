@@ -1,0 +1,8 @@
+<div class="card menu-item"  (click)="navigateTo(menu)">
+  <!-- <div class="card-header">Header</div> -->
+  <div class="card-body">
+    <h4 class="card-title">{{menu.name}}</h4>
+    <p class="card-text">{{menu.description}}</p>
+  </div>
+  <div class="card-footer">Last updated on: {{time | amTimeAgo}}</div>
+</div>
