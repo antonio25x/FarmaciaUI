@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { HttpModule } from "@angular/http";
 
 import { AppComponent } from './app.component';
 import { HorNavBarComponent } from './hor-nav-bar/hor-nav-bar.component';
@@ -22,7 +23,7 @@ const routes: Routes = [
   { path: 'home', pathMatch: 'full', component: HomeComponent },
   { path: '', component: HomeComponent },
   { path: 'aboutus', component: AboutUsComponent },
-  { path: 'contactus' , component: ContactUsComponent},
+  { path: 'contactus', component: ContactUsComponent },
   { path: 'search/:term', component: SearchViewComponent },
   { path: 'users', component: UsersComponent },
   { path: 'medicine', component: MedicineComponent },
@@ -51,7 +52,8 @@ const routes: Routes = [
   imports: [
     MomentModule,
     BrowserModule,
-    RouterModule.forRoot(routes, {useHash: true})
+    RouterModule.forRoot(routes, { useHash: true }),
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]
