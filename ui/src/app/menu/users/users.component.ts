@@ -15,7 +15,7 @@ export class UsersComponent implements OnInit {
   ngOnInit() {
     //TODO: Implement a method to let the user know we are waiting for info to come from server
     //loading feature
-    this.http.get('http://pi-spring-boot-pi-test-sb.1d35.starter-us-east-1.openshiftapps.com/users')
+    this.http.get('https://pi-spring-boot-pi-test-sb.1d35.starter-us-east-1.openshiftapps.com/users')
       .subscribe(res => this.users = res.json() ) ;
   }
 
