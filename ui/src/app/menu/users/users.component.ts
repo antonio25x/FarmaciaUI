@@ -9,14 +9,24 @@ import { Http } from "@angular/http";
 export class UsersComponent implements OnInit {
 
   users: string[];
+  showLoading: boolean = false;
 
   constructor(private http: Http) { }
 
   ngOnInit() {
-    //TODO: Implement a method to let the user know we are waiting for info to come from server
-    //loading feature
+
+    this.showLoading = true;
+
     this.http.get('https://pi-spring-boot-pi-test-sb.1d35.starter-us-east-1.openshiftapps.com/users')
-      .subscribe(res => this.users = res.json() ) ;
+      .subscribe(
+        res => {
+          this.users = res.json();
+          this.showLoading = false;
+        },
+        error => {
+          this.showLoading = false;
+        }
+      );
   }
 
 }

@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HttpModule } from "@angular/http";
 
+import {MatProgressBarModule} from '@angular/material';
+
 import { AppComponent } from './app.component';
 import { HorNavBarComponent } from './hor-nav-bar/hor-nav-bar.component';
 import { HomeComponent } from './home/home.component';
@@ -53,7 +55,8 @@ const routes: Routes = [
     MomentModule,
     BrowserModule,
     RouterModule.forRoot(routes, { useHash: true }),
-    HttpModule
+    HttpModule,
+    MatProgressBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

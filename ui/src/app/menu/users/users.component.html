@@ -1,5 +1,7 @@
 <div class="container">
   <div class="row">
+    
+    <md-progress-bar mode="indeterminate" color="dark" *ngIf="showLoading"></md-progress-bar>
 
     <ol>
       <li *ngFor="let user of users">{{user}}</li>
